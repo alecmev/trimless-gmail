@@ -1,0 +1,6 @@
+*.sublime-workspace
+*.zip
+*.png
+
+icon/
+screenshot/
