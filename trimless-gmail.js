@@ -7,8 +7,14 @@ function untrim()
 {
     $('.ajV, .ajU').click().remove();
     $('.im').css('cssText', 'color: ' + $('.hx').css('color') + ' !important');
-    $('.gmail_extra > br:first-child:not(.leave-alone)').remove();
-    $('.gmail_extra > br:first-child').addClass('leave-alone');
+
+    var firstLineBreak = $('.gmail_extra > br:first-child:not(.leave-alone)');
+
+    if (firstLineBreak.length > 0)
+    {
+        firstLineBreak.next('br').addClass('leave-alone');
+        firstLineBreak.remove();
+    }
 }
 
 function untrimForSure()
@@ -19,9 +25,7 @@ function untrimForSure()
 
 function untrimNotSure(event)
 {
-    var target = $(event.target);
-
-    if (!target.is('.ajV, .ajU'))
+    if (!$(event.target).is('.ajV, .ajU'))
         untrimForSure();
 }
 
