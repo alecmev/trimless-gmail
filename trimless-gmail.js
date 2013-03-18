@@ -7,6 +7,7 @@ function untrim()
 {
     $('.ajV, .ajU').click().remove();
     $('.im').css('cssText', 'color: ' + $('.hx').css('color') + ' !important');
+    $('.gmail_extra > br:first-child').remove();
 }
 
 function untrimForSure()
@@ -15,5 +16,14 @@ function untrimForSure()
     window.setTimeout(untrim, 1000);
 }
 
+function untrimNotSure(event)
+{
+    var target = $(event.target);
+
+    if (!target.is('.ajV, .ajU'))
+        untrimForSure();
+}
+
 $(window).bind('hashchange', untrimForSure);
+$(document).click(untrimNotSure);
 untrimForSure();
