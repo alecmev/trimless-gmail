@@ -7,7 +7,8 @@ function untrim()
 {
     $('.ajV, .ajU').click().remove();
     $('.im').css('cssText', 'color: ' + $('.hx').css('color') + ' !important');
-    $('.gmail_extra > br:first-child').remove();
+    $('.gmail_extra > br:first-child:not(.leave-alone)').remove();
+    $('.gmail_extra > br:first-child').addClass('leave-alone');
 }
 
 function untrimForSure()
