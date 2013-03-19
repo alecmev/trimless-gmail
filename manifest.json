@@ -1,14 +1,13 @@
 {
     "manifest_version": 2,
-    "name": "Trimless GMail",
-    "description": "Automatically shows trimmed content in Google Mail.",
-    "version": "1.1",
+    "name": "Trimless for Google Mail™",
+    "description": "Automatically shows trimmed content in Google Mail™.",
+    "version": "1.3",
     "icons": { "128": "icon128.png" },
 
     "permissions":
     [
-        "https://mail.google.com/",
-        "tabs"
+        "https://*/mail/u/*"
     ],
 
     "content_scripts":
