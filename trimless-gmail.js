@@ -1,8 +1,11 @@
+var styleSheets = document.styleSheets;
+var containers = ['.im', '.gmail_quote', '.h5'];
+
 function untrim()
 {
-    $('.ajT').parent(':not(.aH1)').parent().remove();           // removes all buttons in existing messages
-    $('.ajR').not(':hidden').children('.aH1').click();          // simulates a click on a button in a reply field
-    $('.adL, .adL > div, .h5, .adM').css('display', 'block');   // displays trimmed content
+    $('.adL, .adM, .h5, .h4').css('display', 'block'); // possibly '.adL > div'
+    $('.ajR').not(':hidden').children('.aH1').click();
+    $('.adm, .ajU, .ajV').remove();
 }
 
 function untrimForSure()
@@ -10,6 +13,7 @@ function untrimForSure()
     untrim();
     window.setTimeout(untrim, 1000);
     window.setTimeout(untrim, 2000);
+    resetColor();
 }
 
 function untrimOnClick(event)
@@ -18,13 +22,8 @@ function untrimOnClick(event)
         untrimForSure();
 }
 
-function initialize()
+function resetColor()
 {
-    untrimForSure();
-
-    var styleSheets = document.styleSheets;
-    var containers = ['.im', '.gmail_quote', '.h5'];
-
     for (var i = 0; i < styleSheets.length; i++)
     {
         var rules = styleSheets[i].cssRules || styleSheets[i].rules;
@@ -40,6 +39,12 @@ function initialize()
     }
 }
 
+function initialize()
+{
+    untrimForSure();
+    $(window).bind('hashchange', untrimForSure);
+    $(document).click(untrimOnClick);
+}
+
+untrimForSure();
 $(window).load(initialize);
-$(window).bind('hashchange', untrimForSure);
-$(document).click(untrimOnClick);
