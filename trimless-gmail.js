@@ -1,5 +1,6 @@
 var styleSheets = document.styleSheets;
 var containers = ['.im', '.gmail_quote', '.h5'];
+var uet;
 
 function untrim()
 {
@@ -48,3 +49,41 @@ function initialize()
 
 untrimForSure();
 $(window).load(initialize);
+
+$(document).on('DOMSubtreeModified', 'div.Am.aO9.Al.editable.LW-avf', function(){
+
+    var target = $('div.Am.aO9.Al.editable.LW-avf');
+
+    if (target.hasClass('initialized4')) // not simply unbinding, because there can be other instances
+        return;
+
+    if (uet == null)
+        uet = $('input[name=uet]').val();
+
+    var overwrite = function()
+    {
+        if (target.html() == '' || target.html() == '<br>')
+        {
+            target.html(uet);
+            console.log('invoked');
+        }
+    }
+
+    if (!target.hasClass('initialized1'))
+        target.addClass('initialized1');
+
+    else if (!target.hasClass('initialized2'))
+        target.addClass('initialized2');
+
+    else if (!target.hasClass('initialized3'))
+    {
+        target.addClass('initialized3');
+        overwrite();
+    }
+
+    else if (!target.hasClass('initialized4'))
+    {
+        target.addClass('initialized4');
+        overwrite();
+    }
+});
