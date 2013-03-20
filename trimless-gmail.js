@@ -5,7 +5,6 @@ var uet;
 function untrim()
 {
     $('.adL, .adM, .h5, .h4').css('display', 'block'); // possibly '.adL > div'
-    $('.ajR').not(':hidden').children('.aH1').click();
     $('.adm, .ajU, .ajV').remove();
 }
 
@@ -50,8 +49,8 @@ function initialize()
 untrimForSure();
 $(window).load(initialize);
 
-$(document).on('DOMSubtreeModified', 'div.Am.aO9.Al.editable.LW-avf', function(){
-
+$(document).on('DOMSubtreeModified', 'div.Am.aO9.Al.editable.LW-avf', function()
+{
     var target = $('div.Am.aO9.Al.editable.LW-avf');
 
     if (target.hasClass('initialized4')) // not simply unbinding, because there can be other instances
