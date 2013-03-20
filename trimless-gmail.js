@@ -1,7 +1,8 @@
 function untrim()
 {
-    $('.ajT').parent(':not(.aH1)').parent().remove();
-    $('.adL, .adL > div, .h5, .adM').css('display', 'block');
+    $('.ajT').parent(':not(.aH1)').parent().remove();           // removes all buttons in existing messages
+    $('.ajR').not(':hidden').children('.aH1').click();          // simulates a click on a button in a reply field
+    $('.adL, .adL > div, .h5, .adM').css('display', 'block');   // displays trimmed content
 }
 
 function untrimForSure()
@@ -9,6 +10,12 @@ function untrimForSure()
     untrim();
     window.setTimeout(untrim, 1000);
     window.setTimeout(untrim, 2000);
+}
+
+function untrimOnClick(event)
+{
+    if (!$(event.target).is('.aH1'))
+        untrimForSure();
 }
 
 function initialize()
@@ -35,4 +42,4 @@ function initialize()
 
 $(window).load(initialize);
 $(window).bind('hashchange', untrimForSure);
-$(document).click(untrimForSure);
+$(document).click(untrimOnClick);
