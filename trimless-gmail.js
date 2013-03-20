@@ -39,12 +39,7 @@ function resetColor()
     }
 }
 
-function initialize()
-{
-    untrimForSure();
-    $(window).bind('hashchange', untrimForSure);
-    $(document).click(untrimOnClick);
-}
-
 untrimForSure();
-$(window).load(initialize);
+$(window).bind('hashchange', untrimForSure);
+$(document).click(untrimOnClick);
+$(window).load(untrimForSure);
