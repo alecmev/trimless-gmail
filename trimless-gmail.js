@@ -1,6 +1,6 @@
 function untrim()
 {
-    $('.ajT').parent().parent().remove();
+    $('.ajT').parent(':not(.aH1)').parent().remove();
     $('.adL, .adL > div, .h5, .adM').css('display', 'block');
 }
 
