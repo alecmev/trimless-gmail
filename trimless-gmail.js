@@ -1,9 +1,6 @@
-var styleSheets = document.styleSheets;
-var containers = ['.im', '.gmail_quote', '.h5'];
-
 function untrim()
 {
-    $('.adL, .adM, .h5, .h4').css('display', 'block'); // possibly '.adL > div'
+    $('.adL, .adM, .h5, .h4').css('display', 'block');
     $('.ajR').not(':hidden').children('.aH1').click();
     $('.adm, .ajU, .ajV').remove();
 }
@@ -13,7 +10,7 @@ function untrimForSure()
     untrim();
     window.setTimeout(untrim, 1000);
     window.setTimeout(untrim, 2000);
-    resetColor();
+    styleUntrimmed();
 }
 
 function untrimOnClick(event)
@@ -22,21 +19,11 @@ function untrimOnClick(event)
         untrimForSure();
 }
 
-function resetColor()
+function styleUntrimmed()
 {
-    for (var i = 0; i < styleSheets.length; i++)
-    {
-        var rules = styleSheets[i].cssRules || styleSheets[i].rules;
-
-        for (var j = 0; j < rules.length; j++)
-        {
-            for (var k = 0; k < containers.length; k++)
-            {
-                if (rules[j].selectorText === containers[k])
-                    rules[j].style.color = '#222';
-            }
-        }
-    }
+    $('.adL > .im, .gmail_quote, .h5, blockquote > div')
+        .addClass('trimless-padding trimless-color')
+        .find('*').addClass('trimless-color');
 }
 
 untrimForSure();
