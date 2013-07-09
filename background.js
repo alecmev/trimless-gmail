@@ -1,6 +1,3 @@
-if (!('trimless-enabled' in localStorage))
-    localStorage['trimless-enabled'] = true;
-
 function updateIcon(tabId, isEnabled)
 {
     chrome.pageAction.setIcon({ tabId: tabId, path: {

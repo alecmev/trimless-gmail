@@ -1,3 +1,6 @@
+if (!('trimless-enabled' in localStorage))
+    localStorage['trimless-enabled'] = true;
+
 var isEnabled;
 checkStorage(true);
 
