@@ -25,7 +25,7 @@ function untrim()
 
 function ununtrim()
 {
-    $('.trimless-block').css('display', 'none');
+    $('.trimless-block').removeAttr('style');
     $('.trimless-button1').show();
     $('.trimless-button2').click();
     $('.trimless-button3').show();
