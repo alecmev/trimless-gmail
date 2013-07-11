@@ -14,9 +14,12 @@ function checkStorage(isFirstTime)
 
 function untrim()
 {
-    $('.adL, .adM, .h5, .h4').filter("[display!='block']")
+    if (!isEnabled)
+        return;
+
+    $('.adL, .adM, .h5, .h4').not('.ajR').filter("[display!='block']")
         .css('display', 'block').addClass('trimless-block');
-    $('.ajR').not(':hidden').hide().addClass('trimless-button1')
+    $('.ajR:visible').hide().addClass('trimless-button1')
         .children('.aH1').click().addClass('trimless-button2');
     $('.adm, .ajU, .ajV').hide().addClass('trimless-button3');
 
@@ -25,12 +28,12 @@ function untrim()
 
 function ununtrim()
 {
-    $('.trimless-block').removeAttr('style');
-    $('.trimless-button1').show();
-    $('.trimless-button2').click();
-    $('.trimless-button3').show();
-
     unstyle();
+
+    $('.trimless-button3').show();
+    $('.trimless-button2').click();
+    $('.trimless-button1').show();
+    $('.trimless-block').removeAttr('style');
 }
 
 function style()
