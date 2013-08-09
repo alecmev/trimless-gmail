@@ -1,2 +1,5 @@
+bin/
+
 *.sublime-workspace
+*.xpi
 *.zip

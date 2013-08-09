@@ -1,0 +1,13 @@
+{
+    "fullName":     "Trimless for Google Mail™",
+    "id":           "trimless@jeremejevs.com",
+    "name":         "trimless-gmail",
+    "version":      "1.8.4",
+
+    "author":       "Olegs Jeremejevs",
+    "description":  "Automatically shows trimmed content in Google Mail™.",
+    "homepage":     "http://jeremejevs.com/",
+    "icon":         "data/icon-48.png",
+    "icon64":       "data/icon-64.png",
+    "license":      "MIT"
+}
