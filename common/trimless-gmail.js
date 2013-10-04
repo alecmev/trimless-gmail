@@ -26,20 +26,20 @@ function ununtrim()
 function style()
 {
     $('.adL > .im, .gmail_quote, .h5, blockquote > div')
-        .addClass('trimless-padding trimless-color').find('*')
-        .addClass('trimless-color').removeClass('trimless-padding');
+        .addClass('trimless-indentation trimless-color').find('*')
+        .addClass('trimless-color').removeClass('trimless-indentation');
 }
 
 function unstyle()
 {
-    $('.trimless-padding, .trimless-color')
-        .removeClass('trimless-padding').removeClass('trimless-color');
+    $('.trimless-indentation, .trimless-color')
+        .removeClass('trimless-indentation').removeClass('trimless-color');
 }
 
 function untrimForSure()
 {
-    @@CHECK@@
     if (isEnabled) {
+        applyOptions();
         untrim();
         window.setTimeout(function() {
             untrim();
@@ -67,3 +67,4 @@ $(window).bind('hashchange', untrimForSure);
 $(document).bind('webkitvisibilitychange', untrimForSure);
 $(document).click(untrimOnClick);
 $(window).load(untrimForSure);
+$(applyOptions);

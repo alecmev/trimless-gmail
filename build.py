@@ -22,26 +22,24 @@ with open('firefox/trimless-gmail.js', 'r') as tmpFile:
     firefox = tmpFile.read()
 
 with open('tmp/chrome/trimless-gmail.js', 'w') as tmpFile:
-    tmpFile.write(
-        chrome.replace('@@THEREST@@', 
-            common.replace('@@CHECK@@', 'checkStorage(false);')
-        )
-    )
+    tmpFile.write(chrome.replace('@@THEREST@@', common))
 
 with open('tmp/firefox/data/trimless-gmail.js', 'w') as tmpFile:
-    tmpFile.write(
-        firefox.replace('@@THEREST@@', 
-            common.replace('    @@CHECK@@\n', '')
-        )
-    )
+    tmpFile.write(firefox.replace('@@THEREST@@', common))
 
+shutil.copy('chrome/chrome-bootstrap-1.1.4.min.css', 'tmp/chrome')
 shutil.copy('chrome/background.js', 'tmp/chrome')
 shutil.copy('chrome/manifest.json', 'tmp/chrome')
+shutil.copy('chrome/options.html', 'tmp/chrome')
+shutil.copy('chrome/options.js', 'tmp/chrome')
+shutil.copy('chrome/spectrum-1.1.1.min.css', 'tmp/chrome')
+shutil.copy('chrome/spectrum-1.1.1.min.js', 'tmp/chrome')
 
 shutil.copy('common/jquery-2.0.3.min.js', 'tmp/chrome')
-shutil.copy('common/trimless-gmail.css', 'tmp/chrome')
+shutil.copy('common/tinycolor-0.9.16.min.js', 'tmp/chrome')
 
 shutil.copy('images/icon-16.png', 'tmp/chrome')
+shutil.copy('images/icon-32.png', 'tmp/chrome')
 shutil.copy('images/icon-48.png', 'tmp/chrome')
 shutil.copy('images/icon-128.png', 'tmp/chrome')
 shutil.copy('images/icon-action-19.png', 'tmp/chrome')
@@ -54,7 +52,7 @@ shutil.copy('firefox/main.js', 'tmp/firefox/lib')
 shutil.copy('firefox/package.json', 'tmp/firefox')
 
 shutil.copy('common/jquery-2.0.3.min.js', 'tmp/firefox/data')
-shutil.copy('common/trimless-gmail.css', 'tmp/firefox/data')
+shutil.copy('common/tinycolor-0.9.16.min.js', 'tmp/firefox/data')
 
 shutil.copy('images/icon-48.png', 'tmp/firefox/data')
 shutil.copy('images/icon-64.png', 'tmp/firefox/data')
@@ -70,7 +68,7 @@ with zipfile.ZipFile('../../bin/chrome.zip', 'w') as tmpZip:
 
 os.chdir('../..')
 
-os.system('python C:/addon-sdk/bin/cfx xpi --pkgdir=tmp/firefox')
+os.system('C:/Python27/python D:/addon-sdk-1.14/bin/cfx xpi --pkgdir=tmp/firefox')
 shutil.move('trimless-gmail.xpi', 'bin/firefox.xpi')
 
-shutil.rmtree('tmp', True)
+# shutil.rmtree('tmp', True)

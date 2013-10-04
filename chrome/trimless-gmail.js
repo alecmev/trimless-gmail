@@ -1,31 +1,62 @@
-if (!('trimless-enabled' in localStorage))
-    localStorage['trimless-enabled'] = true;
-
 var isEnabled;
-checkStorage(true);
 
-function checkStorage(isFirstTime)
+chrome.storage.local.get(null, function(items)
 {
-    var oldValue = isEnabled;
-    isEnabled = JSON.parse(localStorage['trimless-enabled']);
-    if (!isFirstTime && oldValue != isEnabled)
-        chrome.runtime.sendMessage(isEnabled);
+    isEnabled = items['trimless-enabled'];
+});
+
+function applyOptions()
+{
+    if (!document.getElementById('trimless-style')) {
+        $('head').append('<style id=\'trimless-style\'></style>');
+    }
+
+    chrome.storage.sync.get(null, function(items)
+    {
+        var trimlessStyle = '';
+
+        if (items['trimless-color-enabled']) {
+            trimlessStyle +=
+                '.trimless-color {' +
+                    'color: ' + items['trimless-color-value'] + 
+                        ' !important;' +
+                    'border-color: ' + items['trimless-color-border'] +
+                        ' !important;' +
+                '}';
+        }
+
+        if (items['trimless-indentation-enabled']) {
+            trimlessStyle +=
+                '.trimless-indentation {' +
+                    'padding-left: ' + items['trimless-indentation-value'] + 
+                        'px !important;' +
+                '}';
+        }
+
+        $('#trimless-style').html(trimlessStyle);
+    });
 }
 
 @@THEREST@@
 
-chrome.runtime.onMessage.addListener(function(isCheck, sender, sendResponse)
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse)
 {
-    if (isCheck)
-        sendResponse({ isEnabled: isEnabled });
-    else {
-        isEnabled = !isEnabled;
-        localStorage['trimless-enabled'] = isEnabled;
-        if (isEnabled)
-            untrim();
-        else
-            ununtrim();
+    sendResponse({ trimless: true });
+});
 
-        sendResponse(isEnabled);
+chrome.storage.onChanged.addListener(function(changes, areaName)
+{
+    if ('sync' == areaName) {
+        applyOptions();
+        return;
+    }
+
+    isEnabled = changes['trimless-enabled'].newValue;
+    chrome.runtime.sendMessage(isEnabled);
+    if (isEnabled) {
+        untrimForSure();
+    }
+    else {
+        ununtrim();
     }
 });

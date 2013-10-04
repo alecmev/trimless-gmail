@@ -1,5 +1,7 @@
 var pageMod = require('sdk/page-mod');
+var ps = require("sdk/preferences/service");
 var self = require("sdk/self");
+var sp = require('sdk/simple-prefs');
 var ss = require("sdk/simple-storage");
 var tabs = require("sdk/tabs");
 var tabUtils = require("sdk/tabs/utils");
@@ -133,6 +135,11 @@ function applyToWindows(something)
     }
 }
 
+function applyOptions(worker)
+{
+    worker.port.emit('options', sp.prefs);
+}
+
 var windowListener =
 {
     onOpenWindow: function(window)
@@ -170,17 +177,16 @@ exports.main = function(options, callbacks)
         contentScriptWhen: 'start',
         contentScriptFile: [
             self.data.url('jquery-2.0.3.min.js'),
+            self.data.url('tinycolor-0.9.16.min.js'),
             self.data.url('trimless-gmail.js')
         ],
-        contentStyleFile: self.data.url('trimless-gmail.css'),
         onAttach: function(worker)
         {
-            console.log('attached');
+            applyOptions(worker);
             worker.port.emit('toggle', ss.storage.enabled.toString());
             workers.push(worker);
             workerTabs.push(worker.tab);
             worker.on('detach', function () {
-                console.log('detached');
                 detachWorker(this);
             });
         }
@@ -195,3 +201,18 @@ exports.onUnload = function(reason)
         styleSheetURI, styleSheetService.USER_SHEET
     );
 }
+
+sp.on('', function(prefName)
+{
+    workers.forEach(applyOptions);
+});
+
+sp.on('reset-options', function()
+{
+    var prefix = ['extensions', self.id];
+    ps.reset(prefix.concat(['trimless-color-enabled']).join('.'));
+    ps.reset(prefix.concat(['trimless-color-value']).join('.'));
+    ps.reset(prefix.concat(['trimless-indentation-enabled']).join('.'));
+    ps.reset(prefix.concat(['trimless-indentation-value']).join('.'));
+    workers.forEach(applyOptions);
+});

@@ -1,13 +1,47 @@
 {
-    "fullName":     "Trimless for Google Mail™",
-    "id":           "trimless@jeremejevs.com",
-    "name":         "trimless-gmail",
-    "version":      "1.8.4",
+    "fullName": "Trimless for Google Mail™",
+    "id": "trimless@jeremejevs.com",
+    "name": "trimless-gmail",
+    "version": "1.9",
 
-    "author":       "Olegs Jeremejevs",
-    "description":  "Automatically shows trimmed content in Google Mail™.",
-    "homepage":     "http://jeremejevs.com/",
-    "icon":         "data/icon-48.png",
-    "icon64":       "data/icon-64.png",
-    "license":      "MIT"
+    "author": "Olegs Jeremejevs",
+    "description": "Automatically shows trimmed content in Google Mail™.",
+    "homepage": "http://jeremejevs.com/",
+    "icon": "data/icon-48.png",
+    "icon64": "data/icon-64.png",
+    "license": "MIT",
+
+    "preferences":
+    [
+        {
+            "name": "trimless-color-enabled",
+            "title": "Change untrimmed text's color",
+            "type": "bool",
+            "value": true
+        },
+        {
+            "name": "trimless-color-value",
+            "title": "The color",
+            "type": "color",
+            "value": "#888888"
+        },
+        {
+            "name": "trimless-indentation-enabled",
+            "title": "Indent untrimmed text to the right",
+            "type": "bool",
+            "value": true
+        },
+        {
+            "name": "trimless-indentation-value",
+            "title": "The size of indentation in pixels",
+            "type": "integer",
+            "value": 32
+        },
+        {
+            "name": "reset-options",
+            "title": "Restore options to their original defaults",
+            "type": "control",
+            "label": "Reset options"
+        }
+    ]
 }
