@@ -1,3 +1,1 @@
-@ECHO OFF
-
-python build.py
+@python build.py

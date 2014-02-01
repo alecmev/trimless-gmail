@@ -46,7 +46,7 @@
         ],
         "js":
         [
-            "jquery-2.0.3.min.js",
+            "jquery-2.1.0.min.js",
             "trimless-gmail.js"
         ],
         "run_at": "document_start",

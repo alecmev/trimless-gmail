@@ -176,7 +176,7 @@ exports.main = function(options, callbacks)
         attachTo: [ 'existing', 'top' ],
         contentScriptWhen: 'start',
         contentScriptFile: [
-            self.data.url('jquery-2.0.3.min.js'),
+            self.data.url('jquery-2.1.0.min.js'),
             self.data.url('tinycolor-0.9.16.min.js'),
             self.data.url('trimless-gmail.js')
         ],
