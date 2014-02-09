@@ -19,8 +19,7 @@ var styleSheetURI = Services.io.newURI(
 );
 var matchURL = 'https://mail.google.com';
 
-function toggleTrimless(window)
-{
+function toggleTrimless(window) {
     var trimlessButton = window.document.getElementById('trimless-button');
     trimlessButton.setAttribute(
         'disabled', (!ss.storage.enabled).toString()
@@ -30,8 +29,7 @@ function toggleTrimless(window)
     );
 }
 
-function buttonClicked(e)
-{
+function buttonClicked(e) {
     ss.storage.enabled = !ss.storage.enabled;
     applyToWindows(toggleTrimless);
     workers.forEach(function(worker) {
@@ -39,8 +37,7 @@ function buttonClicked(e)
     });
 }
 
-function addButton(window)
-{
+function addButton(window) {
     if (
         'chrome://browser/content/browser.xul' != window.location ||
         window.document.getElementById('trimless-button') != null
@@ -62,13 +59,11 @@ function addButton(window)
     tabEvent(window);
     window.gBrowser.addTabsProgressListener({
         window: window,
-        onLocationChange: function(a, b, c, d)
-        {
+        onLocationChange: function(a, b, c, d) {
             tabEvent(window);
         }
     });
-    var tabEventWrapper =
-    {
+    var tabEventWrapper = {
         window: window,
         tabEvent: function()
         {
@@ -83,8 +78,7 @@ function addButton(window)
     );
 }
 
-function removeButton(window)
-{
+function removeButton(window) {
     var trimlessButton = window.document.getElementById('trimless-button');
     if (trimlessButton == null) {
         return;
@@ -93,15 +87,13 @@ function removeButton(window)
     trimlessButton.parentNode.removeChild(trimlessButton);
 }
 
-function checkDomain(window)
-{
+function checkDomain(window) {
     window.document.getElementById('trimless-button').setAttribute('hidden', 
         window.content.document.location.href.indexOf(matchURL) == -1
     );
 }
 
-function tabEvent(window)
-{
+function tabEvent(window) {
     if (window.document.readyState != 'complete') {
         window.addEventListener('DOMContentLoaded', function(e) {
             window.removeEventListener('DOMContentLoaded', arguments.callee);
@@ -116,8 +108,7 @@ function tabEvent(window)
 var workers = [];
 var workerTabs = [];
  
-function detachWorker(worker)
-{
+function detachWorker(worker) {
     var index = workers.indexOf(worker);
     if (index != -1) {
         workers.splice(index, 1);
@@ -125,8 +116,7 @@ function detachWorker(worker)
     }
 }
 
-function applyToWindows(something)
-{
+function applyToWindows(something) {
     var tmpEnum = Services.wm.getEnumerator('navigator:browser');
     while (tmpEnum.hasMoreElements()) {
         var window = tmpEnum.getNext();
@@ -135,21 +125,17 @@ function applyToWindows(something)
     }
 }
 
-function applyOptions(worker)
-{
+function applyOptions(worker) {
     worker.port.emit('options', sp.prefs);
 }
 
-var windowListener =
-{
-    onOpenWindow: function(window)
-    {
+var windowListener = {
+    onOpenWindow: function(window) {
         window.docShell.QueryInterface(Ci.nsIInterfaceRequestor)
             .getInterface(Ci.nsIDOMWindow).addEventListener('load', this, true);
     },
 
-    handleEvent: function(e)
-    {
+    handleEvent: function(e) {
         var window = e.target.defaultView;
         window.removeEventListener('load', this, true);
         addButton(window);
@@ -159,8 +145,7 @@ var windowListener =
     onWindowTitleChange: function(window, title) { },
 }
 
-exports.main = function(options, callbacks)
-{
+exports.main = function(options, callbacks) {
     if (!('enabled' in ss.storage) || options.loadReason != 'startup') {
         ss.storage.enabled = true;
     }
@@ -180,8 +165,7 @@ exports.main = function(options, callbacks)
             self.data.url('tinycolor-0.9.16.min.js'),
             self.data.url('trimless-gmail.js')
         ],
-        onAttach: function(worker)
-        {
+        onAttach: function(worker) {
             applyOptions(worker);
             worker.port.emit('toggle', ss.storage.enabled.toString());
             workers.push(worker);
@@ -193,8 +177,7 @@ exports.main = function(options, callbacks)
     });
 }
 
-exports.onUnload = function(reason)
-{
+exports.onUnload = function(reason) {
     Services.wm.removeListener(windowListener);
     applyToWindows(removeButton);
     styleSheetService.unregisterSheet(
@@ -202,13 +185,11 @@ exports.onUnload = function(reason)
     );
 }
 
-sp.on('', function(prefName)
-{
+sp.on('', function(prefName) {
     workers.forEach(applyOptions);
 });
 
-sp.on('reset-options', function()
-{
+sp.on('reset-options', function() {
     var prefix = ['extensions', self.id];
     ps.reset(prefix.concat(['trimless-color-enabled']).join('.'));
     ps.reset(prefix.concat(['trimless-color-value']).join('.'));

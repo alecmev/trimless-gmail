@@ -1,14 +1,11 @@
 var tmpItems = null;
 
-function save()
-{
+function save() {
     chrome.storage.sync.set(tmpItems);
 }
 
-function initialize()
-{
-    $('#color-enabled').change(function()
-    {
+function initialize() {
+    $('#color-enabled').change(function() {
         tmpItems['trimless-color-enabled'] = this.checked;
     });
     $('#color-enabled').prop('checked', tmpItems['trimless-color-enabled']);
@@ -18,8 +15,7 @@ function initialize()
         flat: true,
         showButtons: false,
         showInput: true,
-        change: function(color)
-        {
+        change: function(color) {
             tmpItems['trimless-color-value'] =
                 color.toHexString().toUpperCase();
             tmpItems['trimless-color-border'] =
@@ -29,24 +25,21 @@ function initialize()
         }
     });
 
-    $('#indentation-enabled').change(function()
-    {
+    $('#indentation-enabled').change(function() {
         tmpItems['trimless-indentation-enabled'] = this.checked;
     });
     $('#indentation-enabled').prop(
         'checked', tmpItems['trimless-indentation-enabled']
     );
 
-    $('#indentation-input').change(function()
-    {
+    $('#indentation-input').change(function() {
         tmpItems['trimless-indentation-value'] = $(this).val();
         $('#indentation-value').text(tmpItems['trimless-indentation-value']);
     });
     $('#indentation-input').val(tmpItems['trimless-indentation-value']);
     $('#indentation-input').change();
 
-    $('#reset').click(function()
-    {
+    $('#reset').click(function() {
         $('#color-enabled').prop('checked', true);
         $('#color-enabled').change();
         $('#color-input').spectrum('set', '#888888');
@@ -58,8 +51,7 @@ function initialize()
     });
 }
 
-chrome.storage.sync.get(null, function(items)
-{
+chrome.storage.sync.get(null, function(items) {
     tmpItems = items;
     $(window).blur(save);
     $(window).unload(save);

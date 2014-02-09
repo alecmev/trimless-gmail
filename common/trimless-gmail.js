@@ -1,8 +1,41 @@
-currentTimeout = null;
-tryAgain = 0;
+untrimTimer = new (function() {
+    this.again = 0;
+    this.isTicking = false;
+
+    this.untrim = function() {
+        if (!isEnabled) {
+            untrimTimer.again = 0;
+            untrimTimer.isTicking = false;
+            return;
+        }
+        if (untrimTimer.again) {
+            --untrimTimer.again;
+            window.setTimeout(untrimTimer.untrim, 1000);
+        }
+        else {
+            untrimTimer.isTicking = false;
+        }
+        untrim();
+    }
+
+    this.more = function() {
+        if (!isEnabled) {
+            untrimTimer.again = 0;
+            untrimTimer.isTicking = false;
+            return;
+        }
+        if (untrimTimer.again < 4) {
+            ++untrimTimer.again;
+        }
+        if (!untrimTimer.isTicking) {
+            untrimTimer.isTicking = true;
+            ++untrimTimer.again;
+            untrimTimer.untrim();
+        }
+    }
+})();
 
 function untrim() {
-    console.log('UNTRIM');
     if (!isEnabled) {
         return;
     }
@@ -28,14 +61,6 @@ function untrim() {
     });
     $('.et .aH1').click();
     $('.editable:not(.trimless-br)').prepend('<br />').addClass('trimless-br');
-
-    if (tryAgain) {
-        --tryAgain;
-        currentTimeout = window.setTimeout(untrim, 1000);
-    }
-    else {
-        currentTimeout = null;
-    }
 }
 
 function ununtrim() {
@@ -61,15 +86,7 @@ function ununtrim() {
 
 function untrimForSure() {
     if (isEnabled) {
-        if (currentTimeout) {
-            if (tryAgain < 4) {
-                ++tryAgain;
-            }
-        }
-        else {
-            tryAgain = 2;
-            untrim();
-        }
+        untrimTimer.more();
     }
     else {
         ununtrim();
