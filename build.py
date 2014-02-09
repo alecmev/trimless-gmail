@@ -31,8 +31,8 @@ shutil.copy('chrome/background.js', 'bin/tmp/chrome')
 shutil.copy('chrome/manifest.json', 'bin/tmp/chrome')
 shutil.copy('chrome/options.html', 'bin/tmp/chrome')
 shutil.copy('chrome/options.js', 'bin/tmp/chrome')
-shutil.copy('chrome/spectrum-1.1.1.min.css', 'bin/tmp/chrome')
-shutil.copy('chrome/spectrum-1.1.1.min.js', 'bin/tmp/chrome')
+shutil.copy('chrome/spectrum-1.3.0.min.css', 'bin/tmp/chrome')
+shutil.copy('chrome/spectrum-1.3.0.min.js', 'bin/tmp/chrome')
 
 shutil.copy('common/jquery-2.1.0.min.js', 'bin/tmp/chrome')
 shutil.copy('common/tinycolor-0.9.16.min.js', 'bin/tmp/chrome')
@@ -67,5 +67,7 @@ with zipfile.ZipFile('../../chrome.zip', 'w') as tmpZip:
 
 os.chdir('..')
 
-os.system('C:/Python27/python C:/addon-sdk-1.15/bin/cfx xpi --pkgdir=firefox')
+os.system(
+    'C:/Python27/python C:/#sdks/addon-sdk-1.15/bin/cfx xpi --pkgdir=firefox'
+)
 shutil.move('trimless-gmail.xpi', '../firefox.xpi')
