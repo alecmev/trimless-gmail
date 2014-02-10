@@ -12,7 +12,7 @@ function applyOptions() {
 
 @@THEREST@@
 
-$(document).bind('webkitvisibilitychange', untrimForSure);
+$(document).bind('webkitvisibilitychange', untrimTimer.more);
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     sendResponse({ trimless: true });
@@ -27,7 +27,7 @@ chrome.storage.onChanged.addListener(function(changes, areaName) {
     isEnabled = changes['trimless-enabled'].newValue;
     chrome.runtime.sendMessage(isEnabled);
     if (isEnabled) {
-        untrimForSure();
+        untrimTimer.more();
     }
     else {
         ununtrim();

@@ -21,7 +21,7 @@ function applyOptions() {
 $(document).bind((
     typeof document.hidden !== 'undefined' ?
         'visibilitychange' : 'mozvisibilitychange'
-    ), untrimForSure
+    ), untrimTimer.more
 );
 
 self.port.on('toggle', function(message) {

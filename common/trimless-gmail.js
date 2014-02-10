@@ -2,44 +2,40 @@ untrimTimer = new (function() {
     this.again = 0;
     this.isTicking = false;
 
-    this.untrim = function() {
-        if (!isEnabled) {
-            untrimTimer.again = 0;
-            untrimTimer.isTicking = false;
-            return;
-        }
-        if (untrimTimer.again) {
-            --untrimTimer.again;
-            window.setTimeout(untrimTimer.untrim, 1000);
-        }
-        else {
-            untrimTimer.isTicking = false;
-        }
-        untrim();
-    }
-
     this.more = function() {
         if (!isEnabled) {
-            untrimTimer.again = 0;
-            untrimTimer.isTicking = false;
+            ununtrim();
             return;
         }
         if (untrimTimer.again < 4) {
             ++untrimTimer.again;
         }
         if (!untrimTimer.isTicking) {
+            untrimTimer.again = 2;
             untrimTimer.isTicking = true;
-            ++untrimTimer.again;
-            untrimTimer.untrim();
+            untrimTimer.stuff();
         }
+    }
+
+    this.stuff = function() {
+        if (!isEnabled) {
+            ununtrim();
+            untrimTimer.again = 0;
+            untrimTimer.isTicking = false;
+            return;
+        }
+        if (untrimTimer.again) {
+            --untrimTimer.again;
+            window.setTimeout(untrimTimer.stuff, 1000);
+        }
+        else {
+            untrimTimer.isTicking = false;
+        }
+        untrim();
     }
 })();
 
 function untrim() {
-    if (!isEnabled) {
-        return;
-    }
-
     applyOptions();
     $('.adP').removeClass('adP').addClass('trimless-adP');
     $('.adO').removeClass('adO').addClass('trimless-adO');
@@ -84,19 +80,10 @@ function ununtrim() {
     $('.trimless-adP').removeClass('trimless-adP').addClass('adP');
 }
 
-function untrimForSure() {
-    if (isEnabled) {
-        untrimTimer.more();
-    }
-    else {
-        ununtrim();
-    }
-}
-
 function untrimOnClick(event) {
     if (isEnabled) {
         if (!$(event.target).is('.aH1')) {
-            untrimForSure();
+            untrimTimer.more();
         }
     }
 }
@@ -129,8 +116,8 @@ function applyOptionsInterface(options) {
     $('#trimless-style').html(trimlessStyle);
 }
 
-untrimForSure();
-$(window).bind('hashchange', untrimForSure);
+untrimTimer.more();
+$(window).bind('hashchange', untrimTimer.more);
 $(document).click(untrimOnClick);
-$(window).load(untrimForSure);
+$(window).load(untrimTimer.more);
 $(applyOptions);
