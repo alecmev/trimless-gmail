@@ -36,6 +36,19 @@ untrimTimer = new (function() {
 })();
 
 function untrim() {
+    var ad = function(what) {
+        var tmpad = $(this);
+        if (!tmpad.text().trim().length) {
+            tmpad.hide().removeClass(what).addClass('trimless-' + what);
+        }
+    };
+
+    $('.vem').each(function() {
+        var tmpvem = $(this);
+        $.get(tmpvem.attr('href'), function(data) {
+            tmpvem.parent().html($('font[size=-1]', data).last().html());
+        });
+    });
     applyOptions();
     $('.adP').removeClass('adP').addClass('trimless-adP');
     $('.adO').removeClass('adO').addClass('trimless-adO');
@@ -43,35 +56,22 @@ function untrim() {
             $('.h5').removeClass('h5').addClass('im').addClass('trimless-h5')
         ).addClass('trimless-content');
     $('.ajU, .ajV, .adm').hide().addClass('trimless-button');
-    $('.adL').each(function() {
-        var tmpad = $(this);
-        if (!tmpad.text().trim().length) {
-            tmpad.hide().removeClass('adL').addClass('trimless-adL');
-        }
-    });
-    $('.adM').each(function() {
-        var tmpad = $(this);
-        if (!tmpad.text().trim().length) {
-            tmpad.hide().removeClass('adM').addClass('trimless-adM');
-        }
-    });
+    $('.adL').each(function() { ad('adL'); });
+    $('.adM').each(function() { ad('adM'); });
     $('.et .aH1').click();
     $('.editable:not(.trimless-br)').prepend('<br />').addClass('trimless-br');
 }
 
 function ununtrim() {
-    $('.trimless-adM').each(function() {
+    var ad = function(what) {
         var tmpad = $(this);
         if (!tmpad.text().trim().length) {
-            tmpad.removeClass('trimless-adM').addClass('adM').show();
+            tmpad.removeClass('trimless-' + what).addClass(what).show();
         }
-    });
-    $('.trimless-adL').each(function() {
-        var tmpad = $(this);
-        if (!tmpad.text().trim().length) {
-            tmpad.removeClass('trimless-adL').addClass('adL').show();
-        }
-    });
+    }
+
+    $('.trimless-adM').each(function() { ad('adM'); });
+    $('.trimless-adL').each(function() { ad('adL'); });
     $('.trimless-button').removeClass('trimless-button').show();
     $('.trimless-content').removeClass('trimless-content');
     $('.trimless-h5').removeClass('trimless-h5')

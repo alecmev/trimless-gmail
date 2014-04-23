@@ -48,9 +48,7 @@ function addButton(window) {
     var trimlessButton = window.document.createElement('toolbarbutton');
     trimlessButton.id = 'trimless-button';
     trimlessButton.setAttribute('tooltiptext', 'Trimless is enabled');
-    trimlessButton.setAttribute(
-        'disabled', (!ss.storage.enabled).toString()
-    );
+    trimlessButton.setAttribute('disabled', (!ss.storage.enabled).toString());
     trimlessButton.setAttribute('hidden', 'true');
     trimlessButton.addEventListener('click', buttonClicked);
     var tmpUrlbarIcons = window.document.getElementById('urlbar-icons');
@@ -162,7 +160,7 @@ exports.main = function(options, callbacks) {
         contentScriptWhen: 'start',
         contentScriptFile: [
             self.data.url('jquery-2.1.0.min.js'),
-            self.data.url('tinycolor-0.9.16.min.js'),
+            self.data.url('tinycolor-0.9.17.js'),
             self.data.url('trimless-gmail.js')
         ],
         onAttach: function(worker) {

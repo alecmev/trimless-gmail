@@ -1,6 +1,5 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
-@-moz-document url('chrome://browser/content/browser.xul')
-{
+@-moz-document url('chrome://browser/content/browser.xul') {
     #trimless-button {
         -moz-appearance: none !important;
         margin: 0 !important;
@@ -16,8 +15,7 @@
     }
 
     #trimless-button > .toolbarbutton-icon {
-        list-style-image: 
-            url('icon-action-19.png') !important;
+        list-style-image: url('icon-action-19.png') !important;
         opacity: .8 !important;
         padding: 0 !important;
         margin: 0 !important;
@@ -25,8 +23,7 @@
     }
 
     #trimless-button[disabled='true'] > .toolbarbutton-icon {
-        list-style-image: 
-            url('icon-action-gray-19.png') !important;
+        list-style-image: url('icon-action-gray-19.png') !important;
     }
 
     #trimless-button:hover > .toolbarbutton-icon {

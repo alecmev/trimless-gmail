@@ -1,8 +1,5 @@
 {
     "manifest_version": 2,
-    "name": "Trimless for Google Mail™",
-    "description": "Automatically shows trimmed content in Google Mail™.",
-    "version": "1.9",
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
     "options_page": "options.html",
 
@@ -32,7 +29,7 @@
     {
         "scripts":
         [
-            "tinycolor-0.9.16.min.js",
+            "tinycolor-0.9.17.js",
             "background.js"
         ],
         "persistent": false
