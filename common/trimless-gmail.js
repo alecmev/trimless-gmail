@@ -26,7 +26,7 @@ untrimTimer = new (function() {
         }
         if (untrimTimer.again) {
             --untrimTimer.again;
-            window.setTimeout(untrimTimer.stuff, 1000);
+            window.setTimeout(function() { untrimTimer.stuff(); }, 1000);
         }
         else {
             untrimTimer.isTicking = false;
