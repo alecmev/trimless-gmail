@@ -56,10 +56,16 @@ function untrim() {
             $('.h5').removeClass('h5').addClass('im').addClass('trimless-h5')
         ).addClass('trimless-content');
     $('.ajU, .ajV, .adm').hide().addClass('trimless-button');
-    $('.adL').each(function() { ad('adL'); });
-    $('.adM').each(function() { ad('adM'); });
-    $('.et .aH1').click();
-    $('.editable:not(.trimless-br)').prepend('<br />').addClass('trimless-br');
+    $('.adL').each(function() { ad.apply(this, ['adL']); });
+    $('.adM').each(function() { ad.apply(this, ['adM']); });
+    var tmpah1 = $('.et .aH1');
+    if (tmpah1.is(':visible')) {
+        tmpah1.click();
+        var tmpextra = $('.editable > .gmail_extra');
+        if (!tmpextra.prev('br').length) {
+            tmpextra.prepend('<br />');
+        }
+    }
 }
 
 function ununtrim() {
@@ -70,8 +76,8 @@ function ununtrim() {
         }
     }
 
-    $('.trimless-adM').each(function() { ad('adM'); });
-    $('.trimless-adL').each(function() { ad('adL'); });
+    $('.trimless-adM').each(function() { ad.apply(this, ['adM']); });
+    $('.trimless-adL').each(function() { ad.apply(this, ['adL']); });
     $('.trimless-button').removeClass('trimless-button').show();
     $('.trimless-content').removeClass('trimless-content');
     $('.trimless-h5').removeClass('trimless-h5')
