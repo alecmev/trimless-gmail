@@ -1,3 +1,2 @@
-bin/
-
-*.sublime-workspace
+/*.sublime-*
+/dist.zip

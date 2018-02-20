@@ -20,8 +20,8 @@ chrome.storage.sync.get(null, function(items) {
 
 function updateIcon(tabId, isEnabled) {
     chrome.pageAction.setIcon({ tabId: tabId, path: {
-        '19': 'icon-action' + (isEnabled ? '' : '-gray') + '-19.png',
-        '38': 'icon-action' + (isEnabled ? '' : '-gray') + '-38.png'
+        '19': 'images/icon-action' + (isEnabled ? '' : '-gray') + '-19.png',
+        '38': 'images/icon-action' + (isEnabled ? '' : '-gray') + '-38.png'
     }});
     chrome.pageAction.setTitle({ tabId: tabId, 
         title: (isEnabled ? 'Trimless is enabled' : 'Trimless is disabled')
@@ -56,13 +56,3 @@ chrome.runtime.onMessage.addListener(function(isEnabled, sender, sendResponse) {
         updateIcon(sender.tab.id, isEnabled);
     }, 200);
 });
-
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-40792111-3']);
-_gaq.push(['_trackPageview']);
-var ga = document.createElement('script');
-ga.type = 'text/javascript';
-ga.async = true;
-ga.src = 'https://ssl.google-analytics.com/ga.js';
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(ga, s);

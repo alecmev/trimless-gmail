@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Trimless Options</title>
+  <link rel="stylesheet" href="vendor/spectrum-1.8.0.min.css">
+  <script type="text/javascript" src="vendor/jquery-3.3.1.slim.min.js"></script>
+  <script type="text/javascript" src="vendor/tinycolor-1.4.1.min.js"></script>
+  <script type="text/javascript" src="vendor/spectrum-1.8.0.min.js"></script>
+  <script type="text/javascript" src="options.js"></script>
+</head>
+
+<body class="chrome-bootstrap">
+
+  <h1>Color</h1>
+
+  <label style="display: block; margin-bottom: 10px">
+    <input
+      id="color-enabled"
+      type="checkbox"
+      style="vertical-align: middle"
+    />
+    <span style="vertical-align: middle">
+      Change untrimmed text's color to 
+      <span id="color-value">#888888</span>
+    </span>
+  </label>
+  <div>
+    <input id="color-input" type="text" />
+  </div>
+
+  <h1>Indentation</h1>
+
+  <label style="display: block; margin-bottom: 10px">
+    <input
+      id="indentation-enabled"
+      type="checkbox"
+      style="vertical-align: middle"
+    />
+    <span style="vertical-align: middle">
+      Indent untrimmed text to the right by 
+      <span id="indentation-value">32</span>
+      px
+    </span>
+  </label>
+  <input id="indentation-input" type="range" min="0" max="256" 
+    style="width: 256px"
+  />
+
+  <div style="margin-top: 24px">
+    <button id="save">Save</button>
+    <span id="status" style="margin-left: 8px"></span>
+  </div>
+
+  <a
+    id="reset"
+    style="margin-top: 24px; display: inline-block"
+    href="javascript:"
+  >
+    Reset to defaults
+  </a>
+
+</body>
+
+</html>

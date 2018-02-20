@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+git archive -o dist.zip `git stash create`
