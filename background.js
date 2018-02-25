@@ -9,9 +9,12 @@ chrome.storage.sync.get(null, function(items) {
     if (!items.hasOwnProperty('trimless-color-enabled')) {
         items['trimless-color-enabled'] = true;
         items['trimless-color-value'] = '#888888';
-        items['trimless-color-border'] = tinycolor.lighten(
-                tinycolor(items['trimless-color-value']), 27
-            ).toHexString().toUpperCase();
+        items['trimless-color-border'] = (
+            tinycolor(items['trimless-color-value'])
+                .lighten(27)
+                .toHexString()
+                .toUpperCase()
+        );
         items['trimless-indentation-enabled'] = true;
         items['trimless-indentation-value'] = 32;
         chrome.storage.sync.set(items);

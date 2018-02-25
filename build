@@ -1,2 +1,6 @@
 #!/usr/bin/env bash
-git archive -o dist.zip `git stash create`
+if [[ -z $(git status -s) ]]; then
+  git archive -o dist.zip HEAD
+else
+  git archive -o dist.zip `git stash create`
+fi
