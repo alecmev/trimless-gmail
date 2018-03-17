@@ -57,7 +57,7 @@ function untrim() {
 
     $('.vem').each(function() {
         var tmpvem = $(this);
-        $.get(tmpvem.attr('href'), function(data) {
+        $.get(this.href, function(data) {
             tmpvem.parent().html($('font[size=-1]', data).last().html());
         });
     });
