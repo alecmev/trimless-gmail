@@ -55,12 +55,12 @@ function untrim() {
         }
     };
 
-    $('.vem').each(function() {
-        var tmpvem = $(this);
-        $.get(this.href, function(data) {
-            tmpvem.parent().html($('font[size=-1]', data).last().html());
-        });
-    });
+	$("a:contains('View entire message')").each(function() { 
+		var tmpvem = $(this); 
+		$.get(this.href, function(data) { 
+			tmpvem.parents(".a3s").children("div:first").html($('font[size=-1]', data).last().html()); 
+		}); 
+	});
     applyOptions();
     $('.adP').removeClass('adP').addClass('trimless-adP');
     $('.adO').removeClass('adO').addClass('trimless-adO');
