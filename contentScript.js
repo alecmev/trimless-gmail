@@ -55,12 +55,14 @@ function untrim() {
         }
     };
 
-    $('.vem').each(function() {
+    // "View entire message"
+    $(".iX > a").each(function() {
         var tmpvem = $(this);
         $.get(this.href, function(data) {
-            tmpvem.parent().html($('font[size=-1]', data).last().html());
+            tmpvem.parents().eq(1).html($('font[size=-1]', data).last().html());
         });
     });
+
     applyOptions();
     $('.adP').removeClass('adP').addClass('trimless-adP');
     $('.adO').removeClass('adO').addClass('trimless-adO');
