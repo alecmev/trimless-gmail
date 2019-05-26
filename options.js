@@ -55,6 +55,11 @@ function initialize() {
   $('#indentation-input').val(tmpItems['trimless-indentation-value']);
   $('#indentation-input').change();
 
+  $('#reply-enabled').change(function() {
+    tmpItems['trimless-reply-enabled'] = this.checked;
+  });
+  $('#reply-enabled').prop('checked', tmpItems['trimless-reply-enabled']);
+
   $('#save').click(save);
 
   $('#reset').click(function() {
@@ -66,6 +71,9 @@ function initialize() {
     $('#indentation-enabled').change();
     $('#indentation-input').val(32);
     $('#indentation-input').change();
+
+    $('#reply-enabled').prop('checked', false);
+    $('#reply-enabled').change();
   });
 }
 

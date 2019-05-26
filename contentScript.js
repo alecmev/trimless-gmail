@@ -4,12 +4,6 @@ chrome.storage.local.get(null, function(items) {
     isEnabled = items['trimless-enabled'];
 });
 
-function applyOptions() {
-    chrome.storage.sync.get(null, function(options) {
-        applyOptionsInterface(options);
-    });
-}
-
 untrimTimer = new (function() {
     this.again = 0;
     this.isTicking = false;
@@ -47,6 +41,16 @@ untrimTimer = new (function() {
     }
 })();
 
+var untrimReplies = false;
+
+function applyOptions() {
+    chrome.storage.sync.get(null, function(options) {
+        applyOptionsInterface(options);
+        untrimReplies = options['trimless-reply-enabled'];
+        untrimTimer.more();
+    });
+}
+
 function untrim() {
     var ad = function(what) {
         var tmpad = $(this);
@@ -72,6 +76,7 @@ function untrim() {
     $('.ajU, .ajV, .adm').hide().addClass('trimless-button');
     $('.adL').each(function() { ad.apply(this, ['adL']); });
     $('.adM').each(function() { ad.apply(this, ['adM']); });
+    if (untrimReplies) $('.ajR > .uC').click(); // Cannot be ununtrimmed easily
     var tmpah1 = $('.et .aH1');
     if (tmpah1.is(':visible')) {
         tmpah1.click();

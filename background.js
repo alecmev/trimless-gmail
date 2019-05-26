@@ -17,6 +17,7 @@ chrome.storage.sync.get(null, function(items) {
         );
         items['trimless-indentation-enabled'] = true;
         items['trimless-indentation-value'] = 32;
+        items['trimless-reply-enabled'] = false;
         chrome.storage.sync.set(items);
     }
 });
