@@ -76,7 +76,16 @@ function untrim() {
     $('.ajU, .ajV, .adm').hide().addClass('trimless-button');
     $('.adL').each(function() { ad.apply(this, ['adL']); });
     $('.adM').each(function() { ad.apply(this, ['adM']); });
-    if (untrimReplies) $('.ajR > .uC').click(); // Cannot be ununtrimmed easily
+
+    if (untrimReplies) {
+        // Otherwise the main textarea steals the focus
+        $('.ajR[style="user-select: none;"]').click(function (e) {
+            e.stopPropagation();
+        });
+        // Harder to undo, since this part isn't read-only
+        $('.ajR[style="user-select: none;"] > .uC').click();
+    }
+
     var tmpah1 = $('.et .aH1');
     if (tmpah1.is(':visible')) {
         tmpah1.click();
