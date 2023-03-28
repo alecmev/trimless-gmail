@@ -1,0 +1,981 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04C2DF1F29D3213D00989D8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2DF1E29D3213D00989D8B /* AppDelegate.swift */; };
+		04C2DF2129D3213D00989D8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2DF2029D3213D00989D8B /* SceneDelegate.swift */; };
+		04C2DF2429D3213D00989D8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF2229D3213D00989D8B /* LaunchScreen.storyboard */; };
+		04C2DF2729D3213D00989D8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF2529D3213D00989D8B /* Main.storyboard */; };
+		04C2DF3029D3213D00989D8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2DF2F29D3213D00989D8B /* AppDelegate.swift */; };
+		04C2DF3329D3213D00989D8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF3129D3213D00989D8B /* Main.storyboard */; };
+		04C2DF3B29D3213D00989D8B /* Trimless for Google Mail™ Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 04C2DF3A29D3213D00989D8B /* Trimless for Google Mail™ Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04C2DF4529D3213D00989D8B /* Trimless for Google Mail™ Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 04C2DF4429D3213D00989D8B /* Trimless for Google Mail™ Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04C2DF4B29D3213D00989D8B /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF0E29D3213C00989D8B /* Main.html */; };
+		04C2DF4C29D3213D00989D8B /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF0E29D3213C00989D8B /* Main.html */; };
+		04C2DF4D29D3213D00989D8B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF1029D3213C00989D8B /* Icon.png */; };
+		04C2DF4E29D3213D00989D8B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF1029D3213C00989D8B /* Icon.png */; };
+		04C2DF4F29D3213D00989D8B /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF1129D3213C00989D8B /* Style.css */; };
+		04C2DF5029D3213D00989D8B /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF1129D3213C00989D8B /* Style.css */; };
+		04C2DF5129D3213D00989D8B /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF1229D3213C00989D8B /* Script.js */; };
+		04C2DF5229D3213D00989D8B /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF1229D3213C00989D8B /* Script.js */; };
+		04C2DF5329D3213D00989D8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2DF1329D3213C00989D8B /* ViewController.swift */; };
+		04C2DF5429D3213D00989D8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2DF1329D3213C00989D8B /* ViewController.swift */; };
+		04C2DF5529D3213D00989D8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF1429D3213D00989D8B /* Assets.xcassets */; };
+		04C2DF5629D3213D00989D8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF1429D3213D00989D8B /* Assets.xcassets */; };
+		04C2DF5729D3213D00989D8B /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2DF1629D3213D00989D8B /* SafariWebExtensionHandler.swift */; };
+		04C2DF5829D3213D00989D8B /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2DF1629D3213D00989D8B /* SafariWebExtensionHandler.swift */; };
+		04C2DF7629D3213D00989D8B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6A29D3213D00989D8B /* LICENSE */; };
+		04C2DF7729D3213D00989D8B /* image-sources in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6B29D3213D00989D8B /* image-sources */; };
+		04C2DF7829D3213D00989D8B /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6C29D3213D00989D8B /* background.js */; };
+		04C2DF7929D3213D00989D8B /* images in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6D29D3213D00989D8B /* images */; };
+		04C2DF7A29D3213D00989D8B /* options.js in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6E29D3213D00989D8B /* options.js */; };
+		04C2DF7B29D3213D00989D8B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6F29D3213D00989D8B /* README.md */; };
+		04C2DF7C29D3213D00989D8B /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF7029D3213D00989D8B /* manifest.json */; };
+		04C2DF7E29D3213D00989D8B /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF7229D3213D00989D8B /* options.html */; };
+		04C2DF7F29D3213D00989D8B /* build in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF7329D3213D00989D8B /* build */; };
+		04C2DF8029D3213D00989D8B /* contentScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF7429D3213D00989D8B /* contentScript.js */; };
+		04C2DF8129D3213D00989D8B /* vendor in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF7529D3213D00989D8B /* vendor */; };
+		04C2DF8229D3213D00989D8B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6A29D3213D00989D8B /* LICENSE */; };
+		04C2DF8329D3213D00989D8B /* image-sources in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6B29D3213D00989D8B /* image-sources */; };
+		04C2DF8429D3213D00989D8B /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6C29D3213D00989D8B /* background.js */; };
+		04C2DF8529D3213D00989D8B /* images in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6D29D3213D00989D8B /* images */; };
+		04C2DF8629D3213D00989D8B /* options.js in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6E29D3213D00989D8B /* options.js */; };
+		04C2DF8729D3213D00989D8B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF6F29D3213D00989D8B /* README.md */; };
+		04C2DF8829D3213D00989D8B /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF7029D3213D00989D8B /* manifest.json */; };
+		04C2DF8A29D3213D00989D8B /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF7229D3213D00989D8B /* options.html */; };
+		04C2DF8B29D3213D00989D8B /* build in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF7329D3213D00989D8B /* build */; };
+		04C2DF8C29D3213D00989D8B /* contentScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF7429D3213D00989D8B /* contentScript.js */; };
+		04C2DF8D29D3213D00989D8B /* vendor in Resources */ = {isa = PBXBuildFile; fileRef = 04C2DF7529D3213D00989D8B /* vendor */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04C2DF3C29D3213D00989D8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04C2DF0829D3213C00989D8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04C2DF3929D3213D00989D8B;
+			remoteInfo = "Trimless for Google Mail™ Extension (iOS)";
+		};
+		04C2DF4629D3213D00989D8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04C2DF0829D3213C00989D8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04C2DF4329D3213D00989D8B;
+			remoteInfo = "Trimless for Google Mail™ Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04C2DF5E29D3213D00989D8B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				04C2DF3B29D3213D00989D8B /* Trimless for Google Mail™ Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C2DF6529D3213D00989D8B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				04C2DF4529D3213D00989D8B /* Trimless for Google Mail™ Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04C2DF0F29D3213C00989D8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		04C2DF1029D3213C00989D8B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		04C2DF1129D3213C00989D8B /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		04C2DF1229D3213C00989D8B /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		04C2DF1329D3213C00989D8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04C2DF1429D3213D00989D8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04C2DF1629D3213D00989D8B /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		04C2DF1B29D3213D00989D8B /* Trimless for Google Mail™.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trimless for Google Mail™.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C2DF1E29D3213D00989D8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04C2DF2029D3213D00989D8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		04C2DF2329D3213D00989D8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04C2DF2629D3213D00989D8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04C2DF2829D3213D00989D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C2DF2D29D3213D00989D8B /* Trimless for Google Mail™.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trimless for Google Mail™.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C2DF2F29D3213D00989D8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04C2DF3229D3213D00989D8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04C2DF3429D3213D00989D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C2DF3529D3213D00989D8B /* Trimless for Google Mail™.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Trimless for Google Mail™.entitlements"; sourceTree = "<group>"; };
+		04C2DF3A29D3213D00989D8B /* Trimless for Google Mail™ Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Trimless for Google Mail™ Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C2DF3F29D3213D00989D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C2DF4429D3213D00989D8B /* Trimless for Google Mail™ Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Trimless for Google Mail™ Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C2DF4929D3213D00989D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C2DF4A29D3213D00989D8B /* Trimless for Google Mail™.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Trimless for Google Mail™.entitlements"; sourceTree = "<group>"; };
+		04C2DF6A29D3213D00989D8B /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
+		04C2DF6B29D3213D00989D8B /* image-sources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "image-sources"; path = "../../image-sources"; sourceTree = "<group>"; };
+		04C2DF6C29D3213D00989D8B /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../background.js; sourceTree = "<group>"; };
+		04C2DF6D29D3213D00989D8B /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = ../../images; sourceTree = "<group>"; };
+		04C2DF6E29D3213D00989D8B /* options.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = options.js; path = ../../options.js; sourceTree = "<group>"; };
+		04C2DF6F29D3213D00989D8B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		04C2DF7029D3213D00989D8B /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../manifest.json; sourceTree = "<group>"; };
+		04C2DF7229D3213D00989D8B /* options.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = options.html; path = ../../options.html; sourceTree = "<group>"; };
+		04C2DF7329D3213D00989D8B /* build */ = {isa = PBXFileReference; lastKnownFileType = text; name = build; path = ../../build; sourceTree = "<group>"; };
+		04C2DF7429D3213D00989D8B /* contentScript.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = contentScript.js; path = ../../contentScript.js; sourceTree = "<group>"; };
+		04C2DF7529D3213D00989D8B /* vendor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = vendor; path = ../../vendor; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04C2DF1829D3213D00989D8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C2DF2A29D3213D00989D8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C2DF3729D3213D00989D8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C2DF4129D3213D00989D8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04C2DF0729D3213C00989D8B = {
+			isa = PBXGroup;
+			children = (
+				04C2DF0C29D3213C00989D8B /* Shared (App) */,
+				04C2DF1529D3213D00989D8B /* Shared (Extension) */,
+				04C2DF1D29D3213D00989D8B /* iOS (App) */,
+				04C2DF2E29D3213D00989D8B /* macOS (App) */,
+				04C2DF3E29D3213D00989D8B /* iOS (Extension) */,
+				04C2DF4829D3213D00989D8B /* macOS (Extension) */,
+				04C2DF1C29D3213D00989D8B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04C2DF0C29D3213C00989D8B /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				04C2DF1329D3213C00989D8B /* ViewController.swift */,
+				04C2DF1429D3213D00989D8B /* Assets.xcassets */,
+				04C2DF0D29D3213C00989D8B /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		04C2DF0D29D3213C00989D8B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04C2DF0E29D3213C00989D8B /* Main.html */,
+				04C2DF1029D3213C00989D8B /* Icon.png */,
+				04C2DF1129D3213C00989D8B /* Style.css */,
+				04C2DF1229D3213C00989D8B /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		04C2DF1529D3213D00989D8B /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				04C2DF6929D3213D00989D8B /* Resources */,
+				04C2DF1629D3213D00989D8B /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		04C2DF1C29D3213D00989D8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04C2DF1B29D3213D00989D8B /* Trimless for Google Mail™.app */,
+				04C2DF2D29D3213D00989D8B /* Trimless for Google Mail™.app */,
+				04C2DF3A29D3213D00989D8B /* Trimless for Google Mail™ Extension.appex */,
+				04C2DF4429D3213D00989D8B /* Trimless for Google Mail™ Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04C2DF1D29D3213D00989D8B /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				04C2DF1E29D3213D00989D8B /* AppDelegate.swift */,
+				04C2DF2029D3213D00989D8B /* SceneDelegate.swift */,
+				04C2DF2229D3213D00989D8B /* LaunchScreen.storyboard */,
+				04C2DF2529D3213D00989D8B /* Main.storyboard */,
+				04C2DF2829D3213D00989D8B /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		04C2DF2E29D3213D00989D8B /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				04C2DF2F29D3213D00989D8B /* AppDelegate.swift */,
+				04C2DF3129D3213D00989D8B /* Main.storyboard */,
+				04C2DF3429D3213D00989D8B /* Info.plist */,
+				04C2DF3529D3213D00989D8B /* Trimless for Google Mail™.entitlements */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		04C2DF3E29D3213D00989D8B /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				04C2DF3F29D3213D00989D8B /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		04C2DF4829D3213D00989D8B /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				04C2DF4929D3213D00989D8B /* Info.plist */,
+				04C2DF4A29D3213D00989D8B /* Trimless for Google Mail™.entitlements */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		04C2DF6929D3213D00989D8B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04C2DF6A29D3213D00989D8B /* LICENSE */,
+				04C2DF6B29D3213D00989D8B /* image-sources */,
+				04C2DF6C29D3213D00989D8B /* background.js */,
+				04C2DF6D29D3213D00989D8B /* images */,
+				04C2DF6E29D3213D00989D8B /* options.js */,
+				04C2DF6F29D3213D00989D8B /* README.md */,
+				04C2DF7029D3213D00989D8B /* manifest.json */,
+				04C2DF7229D3213D00989D8B /* options.html */,
+				04C2DF7329D3213D00989D8B /* build */,
+				04C2DF7429D3213D00989D8B /* contentScript.js */,
+				04C2DF7529D3213D00989D8B /* vendor */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04C2DF1A29D3213D00989D8B /* Trimless for Google Mail™ (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04C2DF5F29D3213D00989D8B /* Build configuration list for PBXNativeTarget "Trimless for Google Mail™ (iOS)" */;
+			buildPhases = (
+				04C2DF1729D3213D00989D8B /* Sources */,
+				04C2DF1829D3213D00989D8B /* Frameworks */,
+				04C2DF1929D3213D00989D8B /* Resources */,
+				04C2DF5E29D3213D00989D8B /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04C2DF3D29D3213D00989D8B /* PBXTargetDependency */,
+			);
+			name = "Trimless for Google Mail™ (iOS)";
+			productName = "Trimless for Google Mail™ (iOS)";
+			productReference = 04C2DF1B29D3213D00989D8B /* Trimless for Google Mail™.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04C2DF2C29D3213D00989D8B /* Trimless for Google Mail™ (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04C2DF6629D3213D00989D8B /* Build configuration list for PBXNativeTarget "Trimless for Google Mail™ (macOS)" */;
+			buildPhases = (
+				04C2DF2929D3213D00989D8B /* Sources */,
+				04C2DF2A29D3213D00989D8B /* Frameworks */,
+				04C2DF2B29D3213D00989D8B /* Resources */,
+				04C2DF6529D3213D00989D8B /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04C2DF4729D3213D00989D8B /* PBXTargetDependency */,
+			);
+			name = "Trimless for Google Mail™ (macOS)";
+			productName = "Trimless for Google Mail™ (macOS)";
+			productReference = 04C2DF2D29D3213D00989D8B /* Trimless for Google Mail™.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04C2DF3929D3213D00989D8B /* Trimless for Google Mail™ Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04C2DF5B29D3213D00989D8B /* Build configuration list for PBXNativeTarget "Trimless for Google Mail™ Extension (iOS)" */;
+			buildPhases = (
+				04C2DF3629D3213D00989D8B /* Sources */,
+				04C2DF3729D3213D00989D8B /* Frameworks */,
+				04C2DF3829D3213D00989D8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Trimless for Google Mail™ Extension (iOS)";
+			productName = "Trimless for Google Mail™ Extension (iOS)";
+			productReference = 04C2DF3A29D3213D00989D8B /* Trimless for Google Mail™ Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		04C2DF4329D3213D00989D8B /* Trimless for Google Mail™ Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04C2DF6229D3213D00989D8B /* Build configuration list for PBXNativeTarget "Trimless for Google Mail™ Extension (macOS)" */;
+			buildPhases = (
+				04C2DF4029D3213D00989D8B /* Sources */,
+				04C2DF4129D3213D00989D8B /* Frameworks */,
+				04C2DF4229D3213D00989D8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Trimless for Google Mail™ Extension (macOS)";
+			productName = "Trimless for Google Mail™ Extension (macOS)";
+			productReference = 04C2DF4429D3213D00989D8B /* Trimless for Google Mail™ Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04C2DF0829D3213C00989D8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					04C2DF1A29D3213D00989D8B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					04C2DF2C29D3213D00989D8B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					04C2DF3929D3213D00989D8B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					04C2DF4329D3213D00989D8B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 04C2DF0B29D3213C00989D8B /* Build configuration list for PBXProject "Trimless for Google Mail™" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04C2DF0729D3213C00989D8B;
+			productRefGroup = 04C2DF1C29D3213D00989D8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04C2DF1A29D3213D00989D8B /* Trimless for Google Mail™ (iOS) */,
+				04C2DF2C29D3213D00989D8B /* Trimless for Google Mail™ (macOS) */,
+				04C2DF3929D3213D00989D8B /* Trimless for Google Mail™ Extension (iOS) */,
+				04C2DF4329D3213D00989D8B /* Trimless for Google Mail™ Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04C2DF1929D3213D00989D8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C2DF4D29D3213D00989D8B /* Icon.png in Resources */,
+				04C2DF2429D3213D00989D8B /* LaunchScreen.storyboard in Resources */,
+				04C2DF4B29D3213D00989D8B /* Main.html in Resources */,
+				04C2DF5129D3213D00989D8B /* Script.js in Resources */,
+				04C2DF5529D3213D00989D8B /* Assets.xcassets in Resources */,
+				04C2DF2729D3213D00989D8B /* Main.storyboard in Resources */,
+				04C2DF4F29D3213D00989D8B /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C2DF2B29D3213D00989D8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C2DF4E29D3213D00989D8B /* Icon.png in Resources */,
+				04C2DF5029D3213D00989D8B /* Style.css in Resources */,
+				04C2DF3329D3213D00989D8B /* Main.storyboard in Resources */,
+				04C2DF5229D3213D00989D8B /* Script.js in Resources */,
+				04C2DF5629D3213D00989D8B /* Assets.xcassets in Resources */,
+				04C2DF4C29D3213D00989D8B /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C2DF3829D3213D00989D8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C2DF8D29D3213D00989D8B /* vendor in Resources */,
+				04C2DF8729D3213D00989D8B /* README.md in Resources */,
+				04C2DF8C29D3213D00989D8B /* contentScript.js in Resources */,
+				04C2DF8829D3213D00989D8B /* manifest.json in Resources */,
+				04C2DF8529D3213D00989D8B /* images in Resources */,
+				04C2DF8229D3213D00989D8B /* LICENSE in Resources */,
+				04C2DF8429D3213D00989D8B /* background.js in Resources */,
+				04C2DF8B29D3213D00989D8B /* build in Resources */,
+				04C2DF8329D3213D00989D8B /* image-sources in Resources */,
+				04C2DF8629D3213D00989D8B /* options.js in Resources */,
+				04C2DF8A29D3213D00989D8B /* options.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C2DF4229D3213D00989D8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C2DF8129D3213D00989D8B /* vendor in Resources */,
+				04C2DF7B29D3213D00989D8B /* README.md in Resources */,
+				04C2DF8029D3213D00989D8B /* contentScript.js in Resources */,
+				04C2DF7C29D3213D00989D8B /* manifest.json in Resources */,
+				04C2DF7929D3213D00989D8B /* images in Resources */,
+				04C2DF7629D3213D00989D8B /* LICENSE in Resources */,
+				04C2DF7829D3213D00989D8B /* background.js in Resources */,
+				04C2DF7F29D3213D00989D8B /* build in Resources */,
+				04C2DF7729D3213D00989D8B /* image-sources in Resources */,
+				04C2DF7A29D3213D00989D8B /* options.js in Resources */,
+				04C2DF7E29D3213D00989D8B /* options.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04C2DF1729D3213D00989D8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C2DF5329D3213D00989D8B /* ViewController.swift in Sources */,
+				04C2DF1F29D3213D00989D8B /* AppDelegate.swift in Sources */,
+				04C2DF2129D3213D00989D8B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C2DF2929D3213D00989D8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C2DF5429D3213D00989D8B /* ViewController.swift in Sources */,
+				04C2DF3029D3213D00989D8B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C2DF3629D3213D00989D8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C2DF5729D3213D00989D8B /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04C2DF4029D3213D00989D8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04C2DF5829D3213D00989D8B /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04C2DF3D29D3213D00989D8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04C2DF3929D3213D00989D8B /* Trimless for Google Mail™ Extension (iOS) */;
+			targetProxy = 04C2DF3C29D3213D00989D8B /* PBXContainerItemProxy */;
+		};
+		04C2DF4729D3213D00989D8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04C2DF4329D3213D00989D8B /* Trimless for Google Mail™ Extension (macOS) */;
+			targetProxy = 04C2DF4629D3213D00989D8B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04C2DF0E29D3213C00989D8B /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04C2DF0F29D3213C00989D8B /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		04C2DF2229D3213D00989D8B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04C2DF2329D3213D00989D8B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		04C2DF2529D3213D00989D8B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04C2DF2629D3213D00989D8B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04C2DF3129D3213D00989D8B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04C2DF3229D3213D00989D8B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04C2DF5929D3213D00989D8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04C2DF5A29D3213D00989D8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		04C2DF5C29D3213D00989D8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Trimless for Google Mail™ Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Trimless-for-Google-Mail-.Extension";
+				PRODUCT_NAME = "Trimless for Google Mail™ Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04C2DF5D29D3213D00989D8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Trimless for Google Mail™ Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Trimless-for-Google-Mail-.Extension";
+				PRODUCT_NAME = "Trimless for Google Mail™ Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04C2DF6029D3213D00989D8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Trimless for Google Mail™";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Trimless-for-Google-Mail-";
+				PRODUCT_NAME = "Trimless for Google Mail™";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04C2DF6129D3213D00989D8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Trimless for Google Mail™";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Trimless-for-Google-Mail-";
+				PRODUCT_NAME = "Trimless for Google Mail™";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04C2DF6329D3213D00989D8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Trimless for Google Mail™.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Trimless for Google Mail™ Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Trimless-for-Google-Mail-.Extension";
+				PRODUCT_NAME = "Trimless for Google Mail™ Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		04C2DF6429D3213D00989D8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Trimless for Google Mail™.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Trimless for Google Mail™ Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Trimless-for-Google-Mail-.Extension";
+				PRODUCT_NAME = "Trimless for Google Mail™ Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		04C2DF6729D3213D00989D8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Trimless for Google Mail™.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Trimless for Google Mail™";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Trimless-for-Google-Mail-";
+				PRODUCT_NAME = "Trimless for Google Mail™";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		04C2DF6829D3213D00989D8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Trimless for Google Mail™.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Trimless for Google Mail™";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Trimless-for-Google-Mail-";
+				PRODUCT_NAME = "Trimless for Google Mail™";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04C2DF0B29D3213C00989D8B /* Build configuration list for PBXProject "Trimless for Google Mail™" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04C2DF5929D3213D00989D8B /* Debug */,
+				04C2DF5A29D3213D00989D8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04C2DF5B29D3213D00989D8B /* Build configuration list for PBXNativeTarget "Trimless for Google Mail™ Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04C2DF5C29D3213D00989D8B /* Debug */,
+				04C2DF5D29D3213D00989D8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04C2DF5F29D3213D00989D8B /* Build configuration list for PBXNativeTarget "Trimless for Google Mail™ (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04C2DF6029D3213D00989D8B /* Debug */,
+				04C2DF6129D3213D00989D8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04C2DF6229D3213D00989D8B /* Build configuration list for PBXNativeTarget "Trimless for Google Mail™ Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04C2DF6329D3213D00989D8B /* Debug */,
+				04C2DF6429D3213D00989D8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04C2DF6629D3213D00989D8B /* Build configuration list for PBXNativeTarget "Trimless for Google Mail™ (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04C2DF6729D3213D00989D8B /* Debug */,
+				04C2DF6829D3213D00989D8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04C2DF0829D3213C00989D8B /* Project object */;
+}
