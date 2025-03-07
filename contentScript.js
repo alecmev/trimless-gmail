@@ -1,10 +1,11 @@
-var isEnabled;
+let isEnabled;
 
-chrome.storage.local.get(null, function(items) {
+// Initialize extension state
+chrome.storage.local.get(null).then(items => {
     isEnabled = items['trimless-enabled'];
 });
 
-untrimTimer = new (function() {
+const untrimTimer = new (function() {
     this.again = 0;
     this.isTicking = false;
 
@@ -32,7 +33,7 @@ untrimTimer = new (function() {
         }
         if (untrimTimer.again) {
             --untrimTimer.again;
-            window.setTimeout(function() { untrimTimer.stuff(); }, 1000);
+            setTimeout(() => untrimTimer.stuff(), 1000);
         }
         else {
             untrimTimer.isTicking = false;
@@ -41,19 +42,18 @@ untrimTimer = new (function() {
     }
 })();
 
-var untrimReplies = false;
+let untrimReplies = false;
 
-function applyOptions() {
-    chrome.storage.sync.get(null, function(options) {
-        applyOptionsInterface(options);
-        untrimReplies = options['trimless-reply-enabled'];
-        untrimTimer.more();
-    });
+async function applyOptions() {
+    const options = await chrome.storage.sync.get(null);
+    applyOptionsInterface(options);
+    untrimReplies = options['trimless-reply-enabled'];
+    untrimTimer.more();
 }
 
 function untrim() {
-    var ad = function(what) {
-        var tmpad = $(this);
+    const ad = function(what) {
+        const tmpad = $(this);
         if (!tmpad.text().trim().length) {
             tmpad.hide().removeClass(what).addClass('trimless-' + what);
         }
@@ -61,7 +61,7 @@ function untrim() {
 
     // "View entire message"
     $(".iX > a").each(function() {
-        var tmpvem = $(this);
+        const tmpvem = $(this);
         $.get(this.href, function(data) {
             tmpvem.parents().eq(1).html($('font[size=-1]', data).last().html());
         });
@@ -71,25 +71,25 @@ function untrim() {
     $('.adP').removeClass('adP').addClass('trimless-adP');
     $('.adO').removeClass('adO').addClass('trimless-adO');
     $('.adL > .im, .adL.im').add(
-            $('.h5').removeClass('h5').addClass('im').addClass('trimless-h5')
-        ).addClass('trimless-content');
+        $('.h5').removeClass('h5').addClass('im').addClass('trimless-h5')
+    ).addClass('trimless-content');
     $('.ajU, .ajV, .adm').hide().addClass('trimless-button');
     $('.adL').each(function() { ad.apply(this, ['adL']); });
     $('.adM').each(function() { ad.apply(this, ['adM']); });
 
     if (untrimReplies) {
         // Otherwise the main textarea steals the focus
-        $('.ajR[style="user-select: none;"]').click(function (e) {
+        $('.ajR[style="user-select: none;"]').click(function(e) {
             e.stopPropagation();
         });
         // Harder to undo, since this part isn't read-only
         $('.ajR[style="user-select: none;"] > .uC').click();
     }
 
-    var tmpah1 = $('.et .aH1');
+    const tmpah1 = $('.et .aH1');
     if (tmpah1.is(':visible')) {
         tmpah1.click();
-        var tmpextra = $('.editable > .gmail_extra');
+        const tmpextra = $('.editable > .gmail_extra');
         if (!tmpextra.prev('br').length) {
             tmpextra.prepend('<br />');
         }
@@ -97,8 +97,8 @@ function untrim() {
 }
 
 function ununtrim() {
-    var ad = function(what) {
-        var tmpad = $(this);
+    const ad = function(what) {
+        const tmpad = $(this);
         if (!tmpad.text().trim().length) {
             tmpad.removeClass('trimless-' + what).addClass(what).show();
         }
@@ -115,65 +115,68 @@ function ununtrim() {
 }
 
 function untrimOnClick(event) {
-    if (isEnabled) {
-        if (!$(event.target).is('.aH1')) {
-            untrimTimer.more();
-        }
+    if (isEnabled && !$(event.target).is('.aH1')) {
+        untrimTimer.more();
     }
 }
 
 function applyOptionsInterface(options) {
     if (!document.getElementById('trimless-style')) {
-        $('head').append('<style id=\'trimless-style\'></style>');
+        $('head').append('<style id="trimless-style"></style>');
     }
 
-    var trimlessStyle = '';
+    let trimlessStyle = '';
 
     if (options['trimless-color-enabled']) {
         trimlessStyle +=
             '.trimless-content, .trimless-content * {' +
-                'color: ' + options['trimless-color-value'] + 
-                    ' !important;' +
-                'border-color: ' + options['trimless-color-border'] +
-                    ' !important;' +
+            'color: ' + options['trimless-color-value'] +
+            ' !important;' +
+            'border-color: ' + options['trimless-color-border'] +
+            ' !important;' +
             '}';
     }
 
     if (options['trimless-indentation-enabled']) {
         trimlessStyle +=
             '.trimless-content {' +
-                'padding-left: ' + options['trimless-indentation-value'] + 
-                    'px !important;' +
+            'padding-left: ' + options['trimless-indentation-value'] +
+            'px !important;' +
             '}';
     }
 
     $('#trimless-style').html(trimlessStyle);
 }
 
+// Initialize
 untrimTimer.more();
-$(window).bind('hashchange', untrimTimer.more);
-$(document).click(untrimOnClick);
+$(window).on('hashchange', untrimTimer.more);
+$(document).on('click', untrimOnClick);
 $(window).on('load', untrimTimer.more);
 $(applyOptions);
 
-$(document).bind('webkitvisibilitychange', untrimTimer.more);
+document.addEventListener('visibilitychange', untrimTimer.more);
 
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+// Handle extension messages
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     sendResponse({ trimless: true });
+    return true;
 });
 
-chrome.storage.onChanged.addListener(function(changes, areaName) {
-    if ('sync' == areaName) {
+// Handle storage changes
+chrome.storage.onChanged.addListener((changes, areaName) => {
+    if (areaName === 'sync') {
         applyOptions();
         return;
     }
 
-    isEnabled = changes['trimless-enabled'].newValue;
-    chrome.runtime.sendMessage(isEnabled);
-    if (isEnabled) {
-        untrimTimer.more();
-    }
-    else {
-        ununtrim();
+    if (changes['trimless-enabled']) {
+        isEnabled = changes['trimless-enabled'].newValue;
+        chrome.runtime.sendMessage(isEnabled);
+        if (isEnabled) {
+            untrimTimer.more();
+        } else {
+            ununtrim();
+        }
     }
 });

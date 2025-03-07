@@ -1,6 +1,6 @@
 {
-  "manifest_version": 2,
-  "name": "Trimless for Google Mail™",
+  "manifest_version": 3,
+  "name": "Trimless for Google Mail™ V3",
   "version": "1.11.1",
   "description": "Automatically shows trimmed content in Google Mail™.",
   "icons": {
@@ -8,7 +8,7 @@
     "48": "images/icon-48.png",
     "128": "images/icon-128.png"
   },
-  "page_action": {
+  "action": {
     "default_title": "Trimless",
     "default_icon": {
       "19": "images/icon-action-19.png",
@@ -16,11 +16,7 @@
     }
   },
   "background": {
-    "scripts": [
-      "vendor/tinycolor-1.4.1.min.js",
-      "background.js"
-    ],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "content_scripts": [{
     "matches": [
@@ -33,14 +29,17 @@
     "run_at": "document_start"
   }],
   "options_ui": {
-    "chrome_style": true,
-    "page": "options.html"
+    "page": "options.html",
+    "open_in_tab": false
   },
   "permissions": [
     "storage"
   ],
+  "host_permissions": [
+    "https://mail.google.com/mail/*"
+  ],
   "short_name": "Trimless Gmail",
-  "applications": {
+  "browser_specific_settings": {
     "gecko": {
       "id": "trimless@jeremejevs.com"
     }
