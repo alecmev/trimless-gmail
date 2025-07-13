@@ -1,27 +1,3 @@
-// Color utility function
-function lightenHexColor(hex, percent) {
-    // Remove the # if present
-    hex = hex.replace('#', '');
-    
-    // Convert to RGB
-    let r = parseInt(hex.substr(0, 2), 16);
-    let g = parseInt(hex.substr(2, 2), 16);
-    let b = parseInt(hex.substr(4, 2), 16);
-    
-    // Lighten
-    r = Math.min(255, Math.round(r + (255 - r) * (percent / 100)));
-    g = Math.min(255, Math.round(g + (255 - g) * (percent / 100)));
-    b = Math.min(255, Math.round(b + (255 - b) * (percent / 100)));
-    
-    // Convert back to hex
-    const toHex = (n) => {
-        const hex = n.toString(16);
-        return hex.length === 1 ? '0' + hex : hex;
-    };
-    
-    return '#' + toHex(r) + toHex(g) + toHex(b);
-}
-
 // Initialize storage with default values
 async function initializeStorage() {
     try {
@@ -32,11 +8,10 @@ async function initializeStorage() {
 
         const sync = await chrome.storage.sync.get(null);
         if (!sync.hasOwnProperty('trimless-color-enabled')) {
-            const baseColor = '#888888';
             await chrome.storage.sync.set({
                 'trimless-color-enabled': true,
-                'trimless-color-value': baseColor,
-                'trimless-color-border': lightenHexColor(baseColor, 27),
+                'trimless-color-value': '#888888',
+                'trimless-color-border': '#a8a8a8', // 27-lighten of above
                 'trimless-indentation-enabled': true,
                 'trimless-indentation-value': 32,
                 'trimless-reply-enabled': false
