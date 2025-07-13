@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Trimless for Google Mail™ V3",
-  "version": "1.11.1",
+  "name": "Trimless for Google Mail™",
+  "version": "1.12.1",
   "description": "Automatically shows trimmed content in Google Mail™.",
   "icons": {
     "16": "images/icon-16.png",
