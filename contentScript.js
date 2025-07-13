@@ -79,16 +79,16 @@ function untrim() {
 
     if (untrimReplies) {
         // Otherwise the main textarea steals the focus
-        $('.ajR[style="user-select: none;"]').click(function(e) {
+        $('.ajR[style="user-select: none;"]').on('click', function(e) {
             e.stopPropagation();
         });
         // Harder to undo, since this part isn't read-only
-        $('.ajR[style="user-select: none;"] > .uC').click();
+        $('.ajR[style="user-select: none;"] > .uC').trigger('click');
     }
 
     const tmpah1 = $('.et .aH1');
     if (tmpah1.is(':visible')) {
-        tmpah1.click();
+        tmpah1.trigger('click');
         const tmpextra = $('.editable > .gmail_extra');
         if (!tmpextra.prev('br').length) {
             tmpextra.prepend('<br />');
