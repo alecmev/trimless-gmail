@@ -24,7 +24,7 @@
       "https://mail.google.com/mail/*"
     ],
     "js": [
-      "vendor/jquery-3.3.1.min.js",
+      "vendor/jquery-3.7.1.min.js",
       "contentScript.js"
     ],
     "run_at": "document_start"
