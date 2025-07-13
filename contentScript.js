@@ -50,7 +50,7 @@ async function applyOptions() {
     untrimTimer.more();
 }
 
-function untrim() {
+async function untrim() {
     const ad = function(what) {
         const tmpad = $(this);
         if (!tmpad.text().trim().length) {
@@ -66,7 +66,7 @@ function untrim() {
         });
     });
 
-    applyOptions();
+    await applyOptions();
     $('.adP').removeClass('adP').addClass('trimless-adP');
     $('.adO').removeClass('adO').addClass('trimless-adO');
     $('.adL > .im, .adL.im').add(
@@ -153,11 +153,10 @@ $(document).on('click', untrimOnClick);
 $(window).on('load', untrimTimer.more);
 $(applyOptions);
 
-document.addEventListener('visibilitychange', untrimTimer.more);
+$(document).on('visibilitychange', untrimTimer.more);
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     sendResponse({ trimless: true });
-    return true;
 });
 
 chrome.storage.onChanged.addListener((changes, areaName) => {

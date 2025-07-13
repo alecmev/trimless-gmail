@@ -50,9 +50,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 chrome.action.onClicked.addListener((tab) => {
     chrome.storage.local.get(null).then(items => {
         const newState = !items['trimless-enabled'];
-        chrome.storage.local.set({ 'trimless-enabled': newState }).then(() => {
-            updateIcon(tab.id, newState);
-        });
+        void chrome.storage.local.set({ 'trimless-enabled': newState });
+        updateIcon(tab.id, newState);
     });
 });
 

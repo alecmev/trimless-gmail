@@ -66,6 +66,7 @@ function initialize() {
     $('#color-enabled').prop('checked', true);
     $('#color-enabled').trigger('change');
     $('#color-input').spectrum('set', '#888888');
+    handleColorChange($('#color-input').spectrum('get'))
 
     $('#indentation-enabled').prop('checked', true);
     $('#indentation-enabled').trigger('change');
