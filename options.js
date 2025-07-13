@@ -26,7 +26,7 @@ function handleIntentationChange(e) {
 }
 
 function initialize() {
-  $('#color-enabled').change(function() {
+  $('#color-enabled').on('change', function() {
     tmpItems['trimless-color-enabled'] = this.checked;
   });
   $('#color-enabled').prop('checked', tmpItems['trimless-color-enabled']);
@@ -43,37 +43,38 @@ function initialize() {
     move: handleColorChange
   });
 
-  $('#indentation-enabled').change(function() {
+  $('#indentation-enabled').on('change', function() {
     tmpItems['trimless-indentation-enabled'] = this.checked;
   });
   $('#indentation-enabled').prop(
     'checked', tmpItems['trimless-indentation-enabled']
   );
 
-  $('#indentation-input').change(handleIntentationChange);
+  $('#indentation-input').on('change', handleIntentationChange);
   $('#indentation-input').on('input change', handleIntentationChange);
   $('#indentation-input').val(tmpItems['trimless-indentation-value']);
-  $('#indentation-input').change();
+  $('#indentation-input').trigger('change');
 
-  $('#reply-enabled').change(function() {
+  $('#reply-enabled').on('change', function() {
     tmpItems['trimless-reply-enabled'] = this.checked;
   });
   $('#reply-enabled').prop('checked', tmpItems['trimless-reply-enabled']);
 
-  $('#save').click(save);
+  $('#save').on('click', save);
 
-  $('#reset').click(function() {
+  $('#reset').on('click', function() {
     $('#color-enabled').prop('checked', true);
-    $('#color-enabled').change();
+    $('#color-enabled').trigger('change');
     $('#color-input').spectrum('set', '#888888');
+    handleColorChange($('#color-input').spectrum('get'))
 
     $('#indentation-enabled').prop('checked', true);
-    $('#indentation-enabled').change();
+    $('#indentation-enabled').trigger('change');
     $('#indentation-input').val(32);
-    $('#indentation-input').change();
+    $('#indentation-input').trigger('change');
 
     $('#reply-enabled').prop('checked', false);
-    $('#reply-enabled').change();
+    $('#reply-enabled').trigger('change');
   });
 }
 

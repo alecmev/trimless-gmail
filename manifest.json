@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Trimless for Google Mail™ V3",
-  "version": "1.11.1",
+  "name": "Trimless for Google Mail™",
+  "version": "1.12.1",
   "description": "Automatically shows trimmed content in Google Mail™.",
   "icons": {
     "16": "images/icon-16.png",
@@ -16,6 +16,7 @@
     }
   },
   "background": {
+    "scripts": ["background.js"],
     "service_worker": "background.js"
   },
   "content_scripts": [{
@@ -23,7 +24,7 @@
       "https://mail.google.com/mail/*"
     ],
     "js": [
-      "vendor/jquery-3.3.1.min.js",
+      "vendor/jquery-3.7.1.min.js",
       "contentScript.js"
     ],
     "run_at": "document_start"

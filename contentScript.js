@@ -1,6 +1,5 @@
 let isEnabled;
 
-// Initialize extension state
 chrome.storage.local.get(null).then(items => {
     isEnabled = items['trimless-enabled'];
 });
@@ -51,7 +50,7 @@ async function applyOptions() {
     untrimTimer.more();
 }
 
-function untrim() {
+async function untrim() {
     const ad = function(what) {
         const tmpad = $(this);
         if (!tmpad.text().trim().length) {
@@ -67,7 +66,7 @@ function untrim() {
         });
     });
 
-    applyOptions();
+    await applyOptions();
     $('.adP').removeClass('adP').addClass('trimless-adP');
     $('.adO').removeClass('adO').addClass('trimless-adO');
     $('.adL > .im, .adL.im').add(
@@ -79,16 +78,16 @@ function untrim() {
 
     if (untrimReplies) {
         // Otherwise the main textarea steals the focus
-        $('.ajR[style="user-select: none;"]').click(function(e) {
+        $('.ajR[style="user-select: none;"]').on('click', function(e) {
             e.stopPropagation();
         });
         // Harder to undo, since this part isn't read-only
-        $('.ajR[style="user-select: none;"] > .uC').click();
+        $('.ajR[style="user-select: none;"] > .uC').trigger('click');
     }
 
     const tmpah1 = $('.et .aH1');
     if (tmpah1.is(':visible')) {
-        tmpah1.click();
+        tmpah1.trigger('click');
         const tmpextra = $('.editable > .gmail_extra');
         if (!tmpextra.prev('br').length) {
             tmpextra.prepend('<br />');
@@ -148,22 +147,18 @@ function applyOptionsInterface(options) {
     $('#trimless-style').html(trimlessStyle);
 }
 
-// Initialize
 untrimTimer.more();
 $(window).on('hashchange', untrimTimer.more);
 $(document).on('click', untrimOnClick);
 $(window).on('load', untrimTimer.more);
 $(applyOptions);
 
-document.addEventListener('visibilitychange', untrimTimer.more);
+$(document).on('visibilitychange', untrimTimer.more);
 
-// Handle extension messages
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     sendResponse({ trimless: true });
-    return true;
 });
 
-// Handle storage changes
 chrome.storage.onChanged.addListener((changes, areaName) => {
     if (areaName === 'sync') {
         applyOptions();
