@@ -1,28 +1,24 @@
-// Initialize storage with default values
-async function initializeStorage() {
-    try {
-        const local = await chrome.storage.local.get(null);
-        if (!local.hasOwnProperty('trimless-enabled')) {
-            await chrome.storage.local.set({ 'trimless-enabled': true });
-        }
+chrome.runtime.onInstalled.addListener(async details => {
+    if (details.reason !== 'install') return;
 
-        const sync = await chrome.storage.sync.get(null);
-        if (!sync.hasOwnProperty('trimless-color-enabled')) {
-            await chrome.storage.sync.set({
-                'trimless-color-enabled': true,
-                'trimless-color-value': '#888888',
-                'trimless-color-border': '#a8a8a8', // 27-lighten of above
-                'trimless-indentation-enabled': true,
-                'trimless-indentation-value': 32,
-                'trimless-reply-enabled': false
-            });
-        }
-    } catch (error) {
-        console.error('Error initializing storage:', error);
+    const local = await chrome.storage.local.get(null);
+    if (!local.hasOwnProperty('trimless-enabled')) {
+        await chrome.storage.local.set({ 'trimless-enabled': true });
     }
-}
 
-// Update the extension icon
+    const sync = await chrome.storage.sync.get(null);
+    if (!sync.hasOwnProperty('trimless-color-enabled')) {
+        await chrome.storage.sync.set({
+            'trimless-color-enabled': true,
+            'trimless-color-value': '#888888',
+            'trimless-color-border': '#a8a8a8', // 27-lighten of above
+            'trimless-indentation-enabled': true,
+            'trimless-indentation-value': 32,
+            'trimless-reply-enabled': false
+        });
+    }
+});
+
 function updateIcon(tabId, isEnabled) {
     chrome.action.setIcon({
         tabId: tabId,
@@ -68,13 +64,4 @@ chrome.runtime.onMessage.addListener((isEnabled, sender) => {
     // Use setTimeout for multiple updates to ensure icon state is consistent
     setTimeout(() => updateIcon(sender.tab.id, isEnabled), 100);
     setTimeout(() => updateIcon(sender.tab.id, isEnabled), 200);
-});
-
-// Initialize service worker
-self.addEventListener('install', (event) => {
-    event.waitUntil(initializeStorage());
-});
-
-self.addEventListener('activate', (event) => {
-    event.waitUntil(Promise.resolve()); // Ensure service worker activation
 });
