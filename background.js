@@ -33,7 +33,6 @@ function updateIcon(tabId, isEnabled) {
     });
 }
 
-// Handle tab updates
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (changeInfo.status === 'complete') {
         chrome.tabs.sendMessage(tabId, true).then(data => {
@@ -48,7 +47,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     }
 });
 
-// Handle icon clicks
 chrome.action.onClicked.addListener((tab) => {
     chrome.storage.local.get(null).then(items => {
         const newState = !items['trimless-enabled'];
@@ -58,10 +56,8 @@ chrome.action.onClicked.addListener((tab) => {
     });
 });
 
-// Handle messages from content script
 chrome.runtime.onMessage.addListener((isEnabled, sender) => {
     updateIcon(sender.tab.id, isEnabled);
-    // Use setTimeout for multiple updates to ensure icon state is consistent
     setTimeout(() => updateIcon(sender.tab.id, isEnabled), 100);
     setTimeout(() => updateIcon(sender.tab.id, isEnabled), 200);
 });

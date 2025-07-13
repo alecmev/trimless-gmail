@@ -1,6 +1,5 @@
 let isEnabled;
 
-// Initialize extension state
 chrome.storage.local.get(null).then(items => {
     isEnabled = items['trimless-enabled'];
 });
@@ -148,7 +147,6 @@ function applyOptionsInterface(options) {
     $('#trimless-style').html(trimlessStyle);
 }
 
-// Initialize
 untrimTimer.more();
 $(window).on('hashchange', untrimTimer.more);
 $(document).on('click', untrimOnClick);
@@ -157,13 +155,11 @@ $(applyOptions);
 
 document.addEventListener('visibilitychange', untrimTimer.more);
 
-// Handle extension messages
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     sendResponse({ trimless: true });
     return true;
 });
 
-// Handle storage changes
 chrome.storage.onChanged.addListener((changes, areaName) => {
     if (areaName === 'sync') {
         applyOptions();
